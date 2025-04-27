@@ -27,6 +27,10 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+          # Install dependencies
+    - name: List files in the directory
+      run: ls -R
+
     # Build the React app
     - name: Build React app
       run: npm run build
