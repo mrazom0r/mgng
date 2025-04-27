@@ -1,0 +1,44 @@
+name: CI/CD Pipeline for React App
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to main (or master if you use that)
+  pull_request:
+    branches:
+      - main  # Trigger on pull requests targeting main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Use the latest version of Ubuntu
+
+    steps:
+    # Checkout code from the repository
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    # Set up Node.js
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'  # Set the Node.js version
+
+    # Install dependencies
+    - name: Install dependencies
+      run: npm install
+
+          # Install dependencies
+    - name: List files in the directory
+      run: ls -R
+
+    # Build the React app
+    - name: Build React app
+      run: npm run build
+
+    # (Optional) Deploy to GitHub Pages (you can skip this if not deploying)
+    - name: Deploy to GitHub Pages
+      if: github.ref == 'refs/heads/main'  # Only deploy from the main branch
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        branch: gh-pages  # The branch to deploy to (you can use 'gh-pages' for GitHub Pages)
+        folder: build  # The folder containing your built app (usually 'build' in React)
