@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mgng/static/css/main.29e04077.css",
+    "main.js": "/mgng/static/js/main.95bdd5c8.js",
+    "index.html": "/mgng/index.html",
+    "main.29e04077.css.map": "/mgng/static/css/main.29e04077.css.map",
+    "main.95bdd5c8.js.map": "/mgng/static/js/main.95bdd5c8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.29e04077.css",
+    "static/js/main.95bdd5c8.js"
+  ]
+}
